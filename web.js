@@ -18,12 +18,12 @@ app.listen(port, function() {
     console.log("Listening on " + port);
 });
 
-//var mongo = require('mongodb');
-//
-//var mongoUri = process.env.MONGOLAB_URI ||
-//    process.env.MONGOHQ_URL ||
-//    'mongodb://herokumongo:_mongopass_123@paulo.mongohq.com:10011/app18351472';
-//
+var mongo = require('mongodb');
+
+var mongoUri = process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://herokumongo:_mongopass_123@paulo.mongohq.com:10011/app18351472';
+
 //console.log('>>>>>', mongoUri);
 //mongo.Db.connect(mongoUri, function (err, db) {
 //    if (err) {
@@ -37,10 +37,10 @@ app.listen(port, function() {
 //    }
 //});
 
-//mongoose.connect(mongoUri, function (err, res) {
-//    if (err) {
-//        console.log ('ERROR connecting to: ' + mongoUri + '. ' + err);
-//    } else {
-//        console.log ('Succeeded connected to: ' + mongoUri);
-//    }
-//});
+mongoose.connect(mongoUri, function (err, res) {
+    if (err) {
+        console.log ('ERROR connecting to: ' + mongoUri + '. ' + err);
+    } else {
+        console.log ('Succeeded connected to: ' + mongoUri);
+    }
+});
