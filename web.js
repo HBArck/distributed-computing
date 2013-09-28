@@ -1,13 +1,10 @@
 /**
  * Created by nborisov on 9/28/13.
  */
-Config = {};
-var config = require('./db_config.js');
-var express = require("express");
-var app = express();
-var path = require('path'); // модуль для парсинга пути
-//var http = require ('http');             // For serving a basic web page.
-var mongoose = require ("mongoose"); // The reason for this demo.
+var express     = require("express");
+var app         = express();
+var path        = require('path'); // модуль для парсинга пути
+var mongoose    = require ("mongoose"); // The reason for this demo.
 
 app.use(express.logger());
 app.use(express.static(path.join(__dirname, "public")));
