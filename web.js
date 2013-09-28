@@ -47,7 +47,8 @@ mongoose.connect(mongoUri, function (err, res) {
         console.log ('Succeeded connected to: ' + mongoUri);
         var userSchema = new mongoose.Schema({
             taskName: String,
-            realization: String
+            realization: String,
+            ind: String
 //    result: String
         });
 
