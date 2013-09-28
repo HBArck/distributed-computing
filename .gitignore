@@ -4,3 +4,5 @@
 *.iml
 *.exe
 *.obj
+node_modulesw
+node_modulesw/*
