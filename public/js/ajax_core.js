@@ -8,8 +8,6 @@ var env_ip = { 'local':'http://10.10.10.62:5000', 'remote':'http://www.distribut
 $(document).ready(function(){
     $("body> .destribut-message").click(function(){
 
-        //$("body> .destribut-message").load(env);
-
         $.ajax({
             url: env_ip['remote'],
             type:'GET',
@@ -23,6 +21,27 @@ $(document).ready(function(){
                 if ( console && console.log ) {
                     console.log( "Sample of data:", data.slice( 0, 100 ) );
                 }
+                var template = getTemplate(data),
+                    ind = getInd(data);
+
             });
     });
+
+    /** Returns astask template
+     * @method getTemlate
+     * @param o {Object} data from server with current task
+     * */
+    function getTemlate(o)
+    {
+
+    }
+
+    /** Returns index for task
+     * @method getInd
+     * @param o {Object} data from server with current task
+     * */
+    function getInd(o)
+    {
+
+    }
 });
