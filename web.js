@@ -3,6 +3,7 @@
  */
 Config = {};
 var config = require('./db_config.js');
+var task_wrapper = require("./public/js/server_taskgen.js");
 var express = require("express");
 var app = express();
 var path = require('path'); // модуль для парсинга пути
@@ -59,7 +60,8 @@ mongoose.connect(mongoUri, function (err, res) {
 
         var firstTask = new Task ({
             taskName: 'primeNumber',
-            realization: 'a mod 2'
+            realization: Config.getTaskTemplate(),
+            ind: Config.getNextTaskInd()
 //    result: true
         });
 

@@ -1,1 +1,1 @@
-Config.mongoDBCred = 'mongodb://herokumongo:_mongopass_123@paulo.mongohq.com:10011/app18351472';
+Config.mongoDBCred = 'mongodb://:@localhost:27017/app18351472';
