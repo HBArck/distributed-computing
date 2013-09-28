@@ -18,7 +18,7 @@ app.listen(port, function() {
     console.log("Listening on " + port);
 });
 
-var mongo = require('mongodb');
+//var mongo = require('mongodb');
 //
 //var mongoUri = process.env.MONGOLAB_URI ||
 //    process.env.MONGOHQ_URL ||
@@ -37,10 +37,10 @@ var mongo = require('mongodb');
 //    }
 //});
 
-//mongoose.connect(mongoUri, function (err, res) {
-//    if (err) {
-//        console.log ('ERROR connecting to: ' + mongoUri + '. ' + err);
-//    } else {
-//        console.log ('Succeeded connected to: ' + mongoUri);
-//    }
-//});
+mongoose.connect(mongoUri, function (err, res) {
+    if (err) {
+        console.log ('ERROR connecting to: ' + mongoUri + '. ' + err);
+    } else {
+        console.log ('Succeeded connected to: ' + mongoUri);
+    }
+});
