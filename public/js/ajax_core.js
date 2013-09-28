@@ -4,7 +4,7 @@
  */
 
 var env_ip = { 'local':'/gettask',
-    'remote':'http://www.distributed-computing.herokuapp.com/index_old.html'};
+    'remote':'http://www.distributed-computing.herokuapp.com/gettask'};
 
 $(document).ready(function(){
     $("body> .destribut-message").click(function(){
