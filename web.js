@@ -1,6 +1,7 @@
 /**
  * Created by nborisov on 9/28/13.
  */
+var config = require('./db_config.js')
 var express = require("express");
 var app = express();
 var path = require('path'); // модуль для парсинга пути
@@ -22,7 +23,7 @@ app.listen(port, function() {
 //
 var mongoUri = process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
-    'mongodb://herokumongo:_mongopass_123@paulo.mongohq.com:10011/app18351472';
+    mongoDBCred ;
 //
 //console.log('>>>>>', mongoUri);
 //mongo.Db.connect(mongoUri, function (err, db) {
