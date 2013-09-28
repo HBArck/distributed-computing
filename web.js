@@ -20,9 +20,9 @@ app.listen(port, function() {
 
 //var mongo = require('mongodb');
 //
-//var mongoUri = process.env.MONGOLAB_URI ||
-//    process.env.MONGOHQ_URL ||
-//    'mongodb://herokumongo:_mongopass_123@paulo.mongohq.com:10011/app18351472';
+var mongoUri = process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://herokumongo:_mongopass_123@paulo.mongohq.com:10011/app18351472';
 //
 //console.log('>>>>>', mongoUri);
 //mongo.Db.connect(mongoUri, function (err, db) {
