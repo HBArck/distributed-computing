@@ -3,12 +3,12 @@
  */
 var express = require("express");
 var app = express();
-//var path = require('path'); // модуль для парсинга пути
+var path = require('path'); // модуль для парсинга пути
 //var http = require ('http');             // For serving a basic web page.
-//var mongoose = require ("mongoose"); // The reason for this demo.
+var mongoose = require ("mongoose"); // The reason for this demo.
 
 app.use(express.logger());
-//app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 app.get('/hello', function(request, response) {
     response.send('Hello World11!');
 });
