@@ -4,7 +4,7 @@
 var express = require("express");
 var app = express();
 var path = require('path'); // модуль для парсинга пути
-var http = require ('http');             // For serving a basic web page.
+//var http = require ('http');             // For serving a basic web page.
 //var mongoose = require ("mongoose"); // The reason for this demo.
 
 app.use(express.logger());
