@@ -1,16 +1,14 @@
 var mongoose    = require('mongoose');
-var log         = require('./log')(module);
 var config      = require('./config');
-var crypto      = require('crypto');
 
 mongoose.connect(config.get('mongoose:uri'));
 var db = mongoose.connection;
 
 db.on('error', function (err) {
-    log.error('connection error:', err.message);
+    console.log('connection error:', err.message);
 });
 db.once('open', function callback () {
-    log.info("Connected to DB!");
+    console.log("Connected to DB!");
 });
 
 var Schema = mongoose.Schema;
@@ -28,19 +26,26 @@ var ResultSchema = new Schema({
 var TaskSchema = new Schema({
     taskName: String,
     realization: String,
+    ind: String,
     results: [ResultSchema]
-});
-
-Article.path('title').validate(function (v) {
-    return v.length > 5 && v.length < 70;
 });
 
 var TaskModel = mongoose.model('Tasks', TaskSchema);
 
+TaskModel.remove({}, function(err) {
+    if (err) {
+        console.log ('error deleting old data.');
+    }
+});
+
+var firstTask = new TaskModel ({
+    taskName: 'primeNumber',
+    realization: global.globalConfComp.getTaskTemplate(),
+    ind: global.globalConfComp.getNextTaskInd(),
+    results: []
+});
+
+firstTask.save(function (err) {if (err) console.log ('Error on save!')});
 
 module.exports.mongoose = mongoose;
-module.exports.ArticleModel = ArticleModel;
-module.exports.UserModel = UserModel;
-module.exports.ClientModel = ClientModel;
-module.exports.AccessTokenModel = AccessTokenModel;
-module.exports.RefreshTokenModel = RefreshTokenModel;
+module.exports.TaskModel = TaskModel;

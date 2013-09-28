@@ -1,10 +1,12 @@
 /**
  * Created by nborisov on 9/28/13.
  */
-var express     = require("express");
-var app         = express();
-var path        = require('path'); // модуль для парсинга пути
-var mongoose    = require ("mongoose"); // The reason for this demo.
+global.globalConfComp    = {};
+var express         = require("express");
+var task_wrapper    = require("./public/js/server_taskgen.js");
+var path            = require('path');
+var TaskModel       = require ("./libs/mongoose").TaskModel;
+var app             = express();
 
 app.use(express.logger());
 app.use(express.static(path.join(__dirname, "public")));
@@ -17,63 +19,14 @@ app.listen(port, function() {
     console.log("Listening on " + port);
 });
 
-//var mongo = require('mongodb');
-//
-var mongoUri = process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
-    Config.mongoDBCred ;
-//
-//console.log('>>>>>', mongoUri);
-//mongo.Db.connect(mongoUri, function (err, db) {
-//    if (err) {
-////        sys.puts(err);
-//        console.log('++++++++++Error mongo connection++++++++', err);
-//    } else {
-//        db.collection('mydocs', function(er, collection) {
-//            collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
-//            });
-//        });
-//    }
-//});
-
-mongoose.connect(mongoUri, function (err, res) {
-    if (err) {
-        console.log ('ERROR connecting to: ' + mongoUri + '. ' + err);
-    } else {
-        console.log ('Succeeded connected to: ' + mongoUri);
-        var userSchema = new mongoose.Schema({
-            taskName: String,
-            realization: String,
-            ind: String
-//    result: String
-        });
-
-        var Task = mongoose.model('Tasks', userSchema);
-        Task.remove({}, function(err) {
-            if (err) {
-                console.log ('error deleting old data.');
-            }
-        });
-
-        var firstTask = new Task ({
-            taskName: 'primeNumber',
-            realization: Config.getTaskTemplate(),
-            ind: Config.getNextTaskInd()
-//    result: true
-        });
-
-        firstTask.save(function (err) {if (err) console.log ('Error on save!')});
-
-        app.get('/gettask', function(request, res) {
-            Task.find({taskName: 'primeNumber'}).exec(function(err, result) {
-                if (!err) {
-                    res.end(JSON.stringify(result, undefined, 2));
-                } else {
-                    res.end('Error in first query. ' + err)
-                }
-            });
-        });
-    }
+app.get('/gettask', function(request, res) {
+    TaskModel.find({taskName: 'primeNumber'}).exec(function(err, result) {
+        if (!err) {
+            res.end(JSON.stringify(result, undefined, 2));
+        } else {
+            res.end('Error in first query. ' + err)
+        }
+    });
 });
 
 

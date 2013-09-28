@@ -2,9 +2,8 @@
  * User: YCotov
  * Date: 28.09.13
  */
-Config = Config || {};
-Config.getTaskTemplate = function()
-//function getTaskTemplate()
+//globalConfig = globalConfig || {};
+global.globalConfComp.getTaskTemplate = function()
 {
     return "function getResult(){"
        +" for (var i=3; i < {ind}; i++)"
@@ -18,7 +17,7 @@ Config.getTaskTemplate = function()
     +"}";
 }
 
-Config.getNextTaskInd = function()
+global.globalConfComp.getNextTaskInd = function()
 {
 
     return "10";
