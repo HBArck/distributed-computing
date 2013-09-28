@@ -18,7 +18,7 @@ app.listen(port, function() {
     console.log("Listening on " + port);
 });
 
-//var mongo = require('mongodb');
+var mongo = require('mongodb');
 //
 //var mongoUri = process.env.MONGOLAB_URI ||
 //    process.env.MONGOHQ_URL ||
