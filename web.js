@@ -43,7 +43,8 @@ mongoose.connect(mongoUri, function (err, res) {
         console.log ('Succeeded connected to: ' + mongoUri);
         var userSchema = new mongoose.Schema({
             taskName: String,
-            realization: String
+            realization: String,
+            ind: String
 //    result: String
         });
 
@@ -56,7 +57,8 @@ mongoose.connect(mongoUri, function (err, res) {
 
         var firstTask = new Task ({
             taskName: 'primeNumber',
-            realization: 'a mod 2'
+            realization: Config.getTaskTemplate(),
+            ind: Config.getNextTaskInd()
 //    result: true
         });
 
