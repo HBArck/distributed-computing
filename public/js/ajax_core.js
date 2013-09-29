@@ -30,8 +30,8 @@ $(document).ready(function(){
 
 
 
-    while(true)
-        $.ajax({
+    function getNewTasks(){
+        start: $.ajax({
             url: env_ip['local'],
             type:'GET',
             async:true,
@@ -51,11 +51,14 @@ $(document).ready(function(){
                         xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
                         // xhr.overrideMimeType();
                     }
-                })
+                }).done(function(){
+                        getNewTasks();
+                    });
 
             })
             .fail(function() {
                 return;
             });
-
+    }
+    getNewTasks();
 });
