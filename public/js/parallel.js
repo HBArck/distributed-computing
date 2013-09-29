@@ -4,6 +4,7 @@
  * Date: 29.09.13
  */
 
+
 (function () {
     var isNode = typeof module !== 'undefined' && module.exports;
     var setImmediate = setImmediate || function (cb) {
