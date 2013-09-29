@@ -31,7 +31,7 @@ $(document).ready(function(){
 
 
     function getNewTasks(){
-        start: $.ajax({
+        $.ajax({
             url: env_ip['local'],
             type:'GET',
             async:true,

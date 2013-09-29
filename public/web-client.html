@@ -4,7 +4,6 @@
     <title></title>
     <script src="js/jqun.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" >
-    <script src="js/ajax_core.js"></script>
     <script src="js/highch/highcharts.js"></script>
     <script src="js/highch/modules/exporting.js"></script>
     <link rel="stylesheet" href="css/smoothness/jquery-ui.css" />
@@ -26,6 +25,7 @@
             padding: 10px;
             text-align: center;
             min-height: 600px;
+            font-size: 14px;
         }
         .header{
             height: 90px;
@@ -51,150 +51,15 @@
             width: 90%;
         }
     </style>
-    <script >
-        $(function() {
+    <script src="js/web-client.js"></script>
 
-            $( "#menu" ).menu();
-            $( "#back" ).button();
-        });
-        $(function () {
-            $('#back').click(function(){
-                $('#menu').toggle();
-                $('#charts').toggle();
-            });
-            $('#primes-charts').click(function(){
-
-                $.ajax({
-                    url: '/getchartdata'
-                }).done(function(datatext) {
-                            var data = JSON.parse(datatext);
-                            $('#menu').toggle();
-                            $('#charts').show();
-                            $('#charts').highcharts({
-                                chart: {
-                                    zoomType: 'xy'
-                                },
-                                title: {
-                                    text: 'Prime results charts'
-                                },
-                                subtitle: {
-                                    text: ''
-                                },
-                                xAxis: [{
-                                }],
-                                yAxis: [{
-                                    labels: {
-                                        formatter: function() {
-                                            return this.value/100 +' t(s)';
-                                        },
-                                        style: {
-                                            color: '#89A54E'
-                                        }
-                                    },
-                                    title: {
-                                        text: 'Time Spent',
-                                        style: {
-                                            color: '#89A54E'
-                                        }
-                                    },
-                                    opposite: true
-
-                                }, { // Secondary yAxis
-                                    gridLineWidth: 0,
-                                    title: {
-                                        text: 'Prime?',
-                                        style: {
-                                            color: '#4572A7'
-                                        }
-                                    },
-                                    labels: {
-                                        /*  formatter: function() {
-                                         return this.value +' true';
-                                         },*/
-                                        style: {
-                                            color: '#4572A7'
-                                        }
-                                    }
-
-                                }, { // Tertiary yAxis
-                                    gridLineWidth: 0,
-                                    title: {
-                                        text: 'Tested Numbers',
-                                        style: {
-                                            color: '#AA4643'
-                                        }
-                                    },
-                                    labels: {
-                                        formatter: function() {
-                                            return this.value /1000 +'k';
-                                        },
-                                        style: {
-                                            color: '#AA4643'
-                                        }
-                                    },
-                                    opposite: true
-                                }],
-                                tooltip: {
-                                    shared: true
-                                },
-                                legend: {
-                                    layout: 'vertical',
-                                    align: 'left',
-                                    x: 120,
-                                    verticalAlign: 'top',
-                                    y: 80,
-                                    floating: true,
-                                    backgroundColor: '#FFFFFF'
-                                },
-                                series: [{
-                                    name: 'Prime?',
-                                    color: '#4572A7',
-                                    type: 'column',
-                                    yAxis: 1,
-                                    data: data.result,
-                                    tooltip: {
-                                        valueSuffix: ' true/false'
-                                    }
-
-                                }, {
-                                    name: 'Numbers',
-                                    type: 'spline',
-                                    color: '#AA4643',
-                                    yAxis: 2,
-                                    data: data.ind,
-                                    marker: {
-                                        enabled: true
-                                    },
-                                    dashStyle: 'shortdot',
-                                    tooltip: {
-                                        valueSuffix: ' t(ms)'
-                                    }
-
-                                }, {
-                                    name: 'Time',
-                                    color: '#89A54E',
-                                    type: 'spline',
-                                    data: data.time,
-                                    tooltip: {
-                                        valueSuffix: ''
-                                    }
-                                }]
-
-                            });
-                }).fail(function() {
-                    throw( "rest getchartdata error" );
-                });
-
-
-            });
-        });
-    </script>
-
+    <script id="calculations"></script>
 </head>
     <body class="">
     <div class="header">
         <div >Javascript Library for Distributed Computing.</div>
     </div>
+    <div id="res_next_prime"></div>
     <div class="page">
         <ul id="menu">
             <li><a href="#">Servers</a></li>
@@ -207,7 +72,7 @@
                     <li class="ui-state-disabled"><a href="#">Belousov-Zhabotinsky Reaction</a></li>
                     <li class="ui-state-disabled"><a href="#">Viral Replication</a></li>
                     <li><a href="/stress" id="fill" target="_blank">Fill database</a></li>
-                    <li><a href="/gettask" id="next_prime" target="_blank">Next Prime</a></li>
+                    <li><a id="next_prime" href="#">Check Next Number</a></li>
                 </ul>
             </li>
             <li style="display: none;">
