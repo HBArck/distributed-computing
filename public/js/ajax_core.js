@@ -15,11 +15,17 @@ $(document).ready(function(){
      * */
     var getTemplate = function(o)
     {
-        var parsed = JSON.parse(o)[0];
+        var parsed = JSON.parse(o);
         var number = parsed.ind;
         var result_template = parsed.realization.replace(/{ind}/g,number);
         $("#calculations")[0].text = result_template;
+
+        //TODO apply worker
+        var start = performance.now();
         var result = getResult();
+        var end = performance.now();
+
+        return {result: result, ind: number, runtime: (end-start)};
     };
 
 
@@ -41,7 +47,7 @@ $(document).ready(function(){
 
                 $.ajax({
                     url: env_ip['resp'],
-                    type:'POST',
+                    type:'GET',
                     async:true,
                     data : getTemplate(data),
                     beforeSend: function( xhr ) {

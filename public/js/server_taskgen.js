@@ -3,7 +3,7 @@
  * Date: 28.09.13
  */
 //globalConfig = globalConfig || {};
-global.globalConfComp.getTaskTemplate = function()
+global.confComp.getTaskTemplate = function()
 {
     return "function getResult(){"
        +" for (var i=3; i < {ind}; i++)"
@@ -17,8 +17,8 @@ global.globalConfComp.getTaskTemplate = function()
     +"}";
 }
 
-global.globalConfComp.getNextTaskInd = function()
+global.confComp.getNextTaskInd = function()
 {
 
-    return "10";
+    return "1";
 }

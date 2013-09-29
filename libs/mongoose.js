@@ -16,36 +16,42 @@ var Schema = mongoose.Schema;
 // Task
 
 var ResultSchema = new Schema({
-    id: String,
+//    _id: String,
     ind: String,
     time: String,
     nodCount: Number,
-    result: String
+    result: String,
+    _task: {type: Number, ref: 'TaskSchema'}
 });
 
 var TaskSchema = new Schema({
+    _id: Number,
     taskName: String,
     realization: String,
-    ind: String,
-    results: [ResultSchema]
+    ind: String
 });
 
 var TaskModel = mongoose.model('Tasks', TaskSchema);
+var ResultModel = mongoose.model('Results', ResultSchema);
 
-TaskModel.remove({}, function(err) {
-    if (err) {
-        console.log ('error deleting old data.');
-    }
-});
+setTimeout(function(){
 
-var firstTask = new TaskModel ({
-    taskName: 'primeNumber',
-    realization: global.globalConfComp.getTaskTemplate(),
-    ind: global.globalConfComp.getNextTaskInd(),
-    results: []
-});
-
-firstTask.save(function (err) {if (err) console.log ('Error on save!')});
+//    TaskModel.remove({}, function(err) {
+//        if (err) {
+//            console.log ('error deleting old data.');
+//        }
+//    });
+//
+//    var firstTask = new TaskModel ({
+//        _id: 0,
+//        taskName: 'primeNumber',
+//        realization: global.confComp.getTaskTemplate(),
+//        ind: global.confComp.getNextTaskInd()
+//    });
+//
+//    firstTask.save(function (err) {if (err) console.log ('Error on save!')});
+}, 1000);
 
 module.exports.mongoose = mongoose;
 module.exports.TaskModel = TaskModel;
+module.exports.ResultModel = ResultModel;
