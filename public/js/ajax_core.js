@@ -29,8 +29,8 @@ $(document).ready(function(){
     };
 
 
-   // $("body> .destribut-message").click(function(){
 
+    while(true)
         $.ajax({
             url: env_ip['local'],
             type:'GET',
@@ -41,9 +41,6 @@ $(document).ready(function(){
             }
         })
             .done(function( data ) {
-                if ( console && console.log ) {
-                    console.log( "Sample of data:", data.slice( 0, 100 ) );
-                }
 
                 $.ajax({
                     url: env_ip['resp'],
@@ -56,7 +53,9 @@ $(document).ready(function(){
                     }
                 })
 
+            })
+            .fail(function() {
+                return;
             });
-    //});
 
 });

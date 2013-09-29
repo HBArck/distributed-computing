@@ -91,7 +91,12 @@ app.get('/setresult', function(request, res) {
         _task: global.confComp.task._id
     });
     result.save(function (err) {
-        if (err) console.log ('Error on save!')
+        if (err){
+            console.log ('Error on save!');
+            res.end("ERROR");
+        }
+        else
+            res.end("SUCCESS");
     });
     nodesCount--;
 });
