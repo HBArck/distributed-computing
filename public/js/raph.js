@@ -3,14 +3,14 @@
  * Date: 28.09.13
  */
 
-// ┌────────────────────────────────────────────────────────────────────┐ \\
-// │ Raphaël 2.1.2 - JavaScript Vector Library                          │ \\
-// ├────────────────────────────────────────────────────────────────────┤ \\
-// │ Copyright © 2008-2012 Dmitry Baranovskiy (http://raphaeljs.com)    │ \\
-// │ Copyright © 2008-2012 Sencha Labs (http://sencha.com)              │ \\
-// ├────────────────────────────────────────────────────────────────────┤ \\
-// │ Licensed under the MIT (http://raphaeljs.com/license.html) license.│ \\
-// └────────────────────────────────────────────────────────────────────┘ \\
+// ?????????????????????????????????????????????????????????????????????? \\
+// ? Rapha?l 2.1.2 - JavaScript Vector Library                          ? \\
+// ?????????????????????????????????????????????????????????????????????? \\
+// ? Copyright © 2008-2012 Dmitry Baranovskiy (http://raphaeljs.com)    ? \\
+// ? Copyright © 2008-2012 Sencha Labs (http://sencha.com)              ? \\
+// ?????????????????????????????????????????????????????????????????????? \\
+// ? Licensed under the MIT (http://raphaeljs.com/license.html) license.? \\
+// ?????????????????????????????????????????????????????????????????????? \\
 // Copyright (c) 2013 Adobe Systems Incorporated. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,11 +24,11 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-// ┌────────────────────────────────────────────────────────────┐ \\
-// │ Eve 0.4.2 - JavaScript Events Library                      │ \\
-// ├────────────────────────────────────────────────────────────┤ \\
-// │ Author Dmitry Baranovskiy (http://dmitry.baranovskiy.com/) │ \\
-// └────────────────────────────────────────────────────────────┘ \\
+// ?????????????????????????????????????????????????????????????? \\
+// ? Eve 0.4.2 - JavaScript Events Library                      ? \\
+// ?????????????????????????????????????????????????????????????? \\
+// ? Author Dmitry Baranovskiy (http://dmitry.baranovskiy.com/) ? \\
+// ?????????????????????????????????????????????????????????????? \\
 
 (function (glob) {
     var version = "0.4.2",
@@ -382,13 +382,13 @@
     };
     (typeof module != "undefined" && module.exports) ? (module.exports = eve) : (typeof define != "undefined" ? (define("eve", [], function() { return eve; })) : (glob.eve = eve));
 })(this);
-// ┌─────────────────────────────────────────────────────────────────────┐ \\
-// │ "Raphaël 2.1.2" - JavaScript Vector Library                         │ \\
-// ├─────────────────────────────────────────────────────────────────────┤ \\
-// │ Copyright (c) 2008-2011 Dmitry Baranovskiy (http://raphaeljs.com)   │ \\
-// │ Copyright (c) 2008-2011 Sencha Labs (http://sencha.com)             │ \\
-// │ Licensed under the MIT (http://raphaeljs.com/license.html) license. │ \\
-// └─────────────────────────────────────────────────────────────────────┘ \\
+// ??????????????????????????????????????????????????????????????????????? \\
+// ? "Rapha?l 2.1.2" - JavaScript Vector Library                         ? \\
+// ??????????????????????????????????????????????????????????????????????? \\
+// ? Copyright (c) 2008-2011 Dmitry Baranovskiy (http://raphaeljs.com)   ? \\
+// ? Copyright (c) 2008-2011 Sencha Labs (http://sencha.com)             ? \\
+// ? Licensed under the MIT (http://raphaeljs.com/license.html) license. ? \\
+// ??????????????????????????????????????????????????????????????????????? \\
 
 (function (glob, factory) {
     // AMD support
@@ -748,9 +748,9 @@
      [ property (object) ]
      **
      * You can add your own method to the canvas. For example if you want to draw a pie chart,
-     * you can create your own pie chart function and ship it as a Raphaël plugin. To do this
+     * you can create your own pie chart function and ship it as a Rapha?l plugin. To do this
      * you need to extend the `Raphael.fn` object. You should modify the `fn` object before a
-     * Raphaël instance is created, otherwise it will take no effect. Please note that the
+     * Rapha?l instance is created, otherwise it will take no effect. Please note that the
      * ability for namespaced plugins was removed in Raphael 2.0. It is up to the plugin to
      * ensure any namespacing ensures proper context.
      > Usage
@@ -1866,8 +1866,8 @@
      o         t2: (number) t value for segment of path2
      o         segment1: (number) order number for segment of path1
      o         segment2: (number) order number for segment of path2
-     o         bez1: (array) eight coordinates representing beziér curve for the segment of path1
-     o         bez2: (array) eight coordinates representing beziér curve for the segment of path2
+     o         bez1: (array) eight coordinates representing bezi?r curve for the segment of path1
+     o         bez2: (array) eight coordinates representing bezi?r curve for the segment of path2
      o     }
      o ]
      \*/
@@ -3658,7 +3658,7 @@
      - x (number) x coordinate of the centre
      - y (number) y coordinate of the centre
      - r (number) radius
-     = (object) Raphaël element object with type “circle”
+     = (object) Rapha?l element object with type “circle”
      **
      > Usage
      | var c = paper.circle(50, 50, 40);
@@ -3681,7 +3681,7 @@
      - width (number) width
      - height (number) height
      - r (number) #optional radius for rounded corners, default is 0
-     = (object) Raphaël element object with type “rect”
+     = (object) Rapha?l element object with type “rect”
      **
      > Usage
      | // regular rectangle
@@ -3706,7 +3706,7 @@
      - y (number) y coordinate of the centre
      - rx (number) horizontal radius
      - ry (number) vertical radius
-     = (object) Raphaël element object with type “ellipse”
+     = (object) Rapha?l element object with type “ellipse”
      **
      > Usage
      | var c = paper.ellipse(50, 50, 40, 20);
@@ -3736,8 +3736,8 @@
      # <tr><td>V</td><td>vertical lineto</td><td>y+</td></tr>
      # <tr><td>C</td><td>curveto</td><td>(x1 y1 x2 y2 x y)+</td></tr>
      # <tr><td>S</td><td>smooth curveto</td><td>(x2 y2 x y)+</td></tr>
-     # <tr><td>Q</td><td>quadratic Bézier curveto</td><td>(x1 y1 x y)+</td></tr>
-     # <tr><td>T</td><td>smooth quadratic Bézier curveto</td><td>(x y)+</td></tr>
+     # <tr><td>Q</td><td>quadratic B?zier curveto</td><td>(x1 y1 x y)+</td></tr>
+     # <tr><td>T</td><td>smooth quadratic B?zier curveto</td><td>(x y)+</td></tr>
      # <tr><td>A</td><td>elliptical arc</td><td>(rx ry x-axis-rotation large-arc-flag sweep-flag x y)+</td></tr>
      # <tr><td>R</td><td><a href="http://en.wikipedia.org/wiki/Catmull–Rom_spline#Catmull.E2.80.93Rom_spline">Catmull-Rom curveto</a>*</td><td>x1 y1 (x y)+</td></tr></tbody></table>
      * * “Catmull-Rom curveto” is a not standard SVG command and added in 2.0 to make life easier.
@@ -3767,7 +3767,7 @@
      - y (number) y coordinate position
      - width (number) width of the image
      - height (number) height of the image
-     = (object) Raphaël element object with type “image”
+     = (object) Rapha?l element object with type “image”
      **
      > Usage
      | var c = paper.image("apple.png", 10, 10, 80, 80);
@@ -3788,10 +3788,10 @@
      - x (number) x coordinate position
      - y (number) y coordinate position
      - text (string) The text string to draw
-     = (object) Raphaël element object with type “text”
+     = (object) Rapha?l element object with type “text”
      **
      > Usage
-     | var t = paper.text(50, 50, "Raphaël\nkicks\nbutt!");
+     | var t = paper.text(50, 50, "Rapha?l\nkicks\nbutt!");
      \*/
     paperproto.text = function (x, y, text) {
         var out = R._engine.text(this, x || 0, y || 0, Str(text));
@@ -3924,7 +3924,7 @@
      **
      * Returns you topmost element under given point.
      **
-     = (object) Raphaël element object
+     = (object) Rapha?l element object
      > Parameters
      **
      - x (number) x coordinate from the top left corner of the window
@@ -3988,7 +3988,7 @@
      > Parameters
      **
      - id (number) id
-     = (object) Raphaël element object
+     = (object) Rapha?l element object
      \*/
     paperproto.getById = function (id) {
         var bot = this.bottom;
@@ -5429,9 +5429,9 @@
      * Raphael.registerFont
      [ method ]
      **
-     * Adds given font to the registered set of fonts for Raphaël. Should be used as an internal call from within Cufón’s font file.
+     * Adds given font to the registered set of fonts for Rapha?l. Should be used as an internal call from within Cuf?n’s font file.
      * Returns original parameter, so it could be used with chaining.
-     # <a href="http://wiki.github.com/sorccu/cufon/about">More about Cufón and how to convert your font form TTF, OTF, etc to JavaScript file.</a>
+     # <a href="http://wiki.github.com/sorccu/cufon/about">More about Cuf?n and how to convert your font form TTF, OTF, etc to JavaScript file.</a>
      **
      > Parameters
      **
@@ -5702,7 +5702,7 @@
      * Raphael.ninja
      [ method ]
      **
-     * If you want to leave no trace of Raphaël (Well, Raphaël creates only one global variable `Raphael`, but anyway.) You can use `ninja` method.
+     * If you want to leave no trace of Rapha?l (Well, Rapha?l creates only one global variable `Raphael`, but anyway.) You can use `ninja` method.
      * Beware, that in this case plugins could stop working, because they are depending on global variable existance.
      **
      = (object) Raphael object
@@ -5756,15 +5756,15 @@
         loaded = true;
     });
 
-// ┌─────────────────────────────────────────────────────────────────────┐ \\
-// │ Raphaël - JavaScript Vector Library                                 │ \\
-// ├─────────────────────────────────────────────────────────────────────┤ \\
-// │ SVG Module                                                          │ \\
-// ├─────────────────────────────────────────────────────────────────────┤ \\
-// │ Copyright (c) 2008-2011 Dmitry Baranovskiy (http://raphaeljs.com)   │ \\
-// │ Copyright (c) 2008-2011 Sencha Labs (http://sencha.com)             │ \\
-// │ Licensed under the MIT (http://raphaeljs.com/license.html) license. │ \\
-// └─────────────────────────────────────────────────────────────────────┘ \\
+// ??????????????????????????????????????????????????????????????????????? \\
+// ? Rapha?l - JavaScript Vector Library                                 ? \\
+// ??????????????????????????????????????????????????????????????????????? \\
+// ? SVG Module                                                          ? \\
+// ??????????????????????????????????????????????????????????????????????? \\
+// ? Copyright (c) 2008-2011 Dmitry Baranovskiy (http://raphaeljs.com)   ? \\
+// ? Copyright (c) 2008-2011 Sencha Labs (http://sencha.com)             ? \\
+// ? Licensed under the MIT (http://raphaeljs.com/license.html) license. ? \\
+// ??????????????????????????????????????????????????????????????????????? \\
 
     (function(){
         if (!R.svg) {
@@ -6733,7 +6733,7 @@
          * gradient from white to black or “`r(0.25, 0.75)#fff-#000`” – gradient from white to black with focus point
          * at 0.25, 0.75. Focus point coordinates are in 0..1 range. Radial gradients can only be applied to circles and ellipses.
          > Path String
-         # <p>Please refer to <a href="http://www.w3.org/TR/SVG/paths.html#PathData" title="Details of a path’s data attribute’s format are described in the SVG specification.">SVG documentation regarding path string</a>. Raphaël fully supports it.</p>
+         # <p>Please refer to <a href="http://www.w3.org/TR/SVG/paths.html#PathData" title="Details of a path’s data attribute’s format are described in the SVG specification.">SVG documentation regarding path string</a>. Rapha?l fully supports it.</p>
          > Colour Parsing
          # <ul>
          #     <li>Colour name (“<code>red</code>”, “<code>green</code>”, “<code>cornflowerblue</code>”, etc)</li>
@@ -7127,15 +7127,15 @@
         }
     })();
 
-// ┌─────────────────────────────────────────────────────────────────────┐ \\
-// │ Raphaël - JavaScript Vector Library                                 │ \\
-// ├─────────────────────────────────────────────────────────────────────┤ \\
-// │ VML Module                                                          │ \\
-// ├─────────────────────────────────────────────────────────────────────┤ \\
-// │ Copyright (c) 2008-2011 Dmitry Baranovskiy (http://raphaeljs.com)   │ \\
-// │ Copyright (c) 2008-2011 Sencha Labs (http://sencha.com)             │ \\
-// │ Licensed under the MIT (http://raphaeljs.com/license.html) license. │ \\
-// └─────────────────────────────────────────────────────────────────────┘ \\
+// ??????????????????????????????????????????????????????????????????????? \\
+// ? Rapha?l - JavaScript Vector Library                                 ? \\
+// ??????????????????????????????????????????????????????????????????????? \\
+// ? VML Module                                                          ? \\
+// ??????????????????????????????????????????????????????????????????????? \\
+// ? Copyright (c) 2008-2011 Dmitry Baranovskiy (http://raphaeljs.com)   ? \\
+// ? Copyright (c) 2008-2011 Sencha Labs (http://sencha.com)             ? \\
+// ? Licensed under the MIT (http://raphaeljs.com/license.html) license. ? \\
+// ??????????????????????????????????????????????????????????????????????? \\
 
     (function(){
         if (!R.vml) {
@@ -8115,3 +8115,18 @@
     return R;
 }));
 
+(function(){function a(g,n){var f=g.length/n,h=0,e=f,m=0,i=[];while(h<g.length){e--;if(e<0){m+=g[h]*(1+e);i.push(m/f);m=g[h++]*-e;e+=f}else{m+=g[h++]}}return i}function d(f,e,p,n,k,j){var h=(p-f)/2,g=(k-p)/2,q=Math.atan((p-f)/Math.abs(n-e)),o=Math.atan((k-p)/Math.abs(n-j));q=e<n?Math.PI-q:q;o=j<n?Math.PI-o:o;var i=Math.PI/2-((q+o)%(Math.PI*2))/2,s=h*Math.sin(i+q),m=h*Math.cos(i+q),r=g*Math.sin(i+o),l=g*Math.cos(i+o);return{x1:p-s,y1:n+m,x2:p+r,y2:n+l}}function b(f,P,O,e,h,A,z,J){var s=this;J=J||{};if(!f.raphael.is(A[0],"array")){A=[A]}if(!f.raphael.is(z[0],"array")){z=[z]}var q=J.gutter||10,B=Math.max(A[0].length,z[0].length),t=J.symbol||"",S=J.colors||s.colors,v=null,p=null,ad=f.set(),T=[];for(var ac=0,L=z.length;ac<L;ac++){B=Math.max(B,z[ac].length)}var ae=f.set();for(ac=0,L=z.length;ac<L;ac++){if(J.shade){ae.push(f.path().attr({stroke:"none",fill:S[ac],opacity:J.nostroke?1:0.3}))}if(z[ac].length>e-2*q){z[ac]=a(z[ac],e-2*q);B=e-2*q}if(A[ac]&&A[ac].length>e-2*q){A[ac]=a(A[ac],e-2*q)}}var W=Array.prototype.concat.apply([],A),U=Array.prototype.concat.apply([],z),u=s.snapEnds(Math.min.apply(Math,W),Math.max.apply(Math,W),A[0].length-1),E=u.from,o=u.to,N=s.snapEnds(Math.min.apply(Math,U),Math.max.apply(Math,U),z[0].length-1),C=N.from,n=N.to,Z=(e-q*2)/((o-E)||1),V=(h-q*2)/((n-C)||1);var G=f.set();if(J.axis){var m=(J.axis+"").split(/[,\s]+/);+m[0]&&G.push(s.axis(P+q,O+q,e-2*q,E,o,J.axisxstep||Math.floor((e-2*q)/20),2,f));+m[1]&&G.push(s.axis(P+e-q,O+h-q,h-2*q,C,n,J.axisystep||Math.floor((h-2*q)/20),3,f));+m[2]&&G.push(s.axis(P+q,O+h-q,e-2*q,E,o,J.axisxstep||Math.floor((e-2*q)/20),0,f));+m[3]&&G.push(s.axis(P+q,O+h-q,h-2*q,C,n,J.axisystep||Math.floor((h-2*q)/20),1,f))}var M=f.set(),aa=f.set(),r;for(ac=0,L=z.length;ac<L;ac++){if(!J.nostroke){M.push(r=f.path().attr({stroke:S[ac],"stroke-width":J.width||2,"stroke-linejoin":"round","stroke-linecap":"round","stroke-dasharray":J.dash||""}))}var g=Raphael.is(t,"array")?t[ac]:t,H=f.set();T=[];for(var ab=0,w=z[ac].length;ab<w;ab++){var l=P+q+((A[ac]||A[0])[ab]-E)*Z,k=O+h-q-(z[ac][ab]-C)*V;(Raphael.is(g,"array")?g[ab]:g)&&H.push(f[Raphael.is(g,"array")?g[ab]:g](l,k,(J.width||2)*3).attr({fill:S[ac],stroke:"none"}));if(J.smooth){if(ab&&ab!=w-1){var R=P+q+((A[ac]||A[0])[ab-1]-E)*Z,F=O+h-q-(z[ac][ab-1]-C)*V,Q=P+q+((A[ac]||A[0])[ab+1]-E)*Z,D=O+h-q-(z[ac][ab+1]-C)*V,af=d(R,F,l,k,Q,D);T=T.concat([af.x1,af.y1,l,k,af.x2,af.y2])}if(!ab){T=["M",l,k,"C",l,k]}}else{T=T.concat([ab?"L":"M",l,k])}}if(J.smooth){T=T.concat([l,k,l,k])}aa.push(H);if(J.shade){ae[ac].attr({path:T.concat(["L",l,O+h-q,"L",P+q+((A[ac]||A[0])[0]-E)*Z,O+h-q,"z"]).join(",")})}!J.nostroke&&r.attr({path:T.join(",")})}function K(an){var ak=[];for(var al=0,ap=A.length;al<ap;al++){ak=ak.concat(A[al])}ak.sort();var aq=[],ah=[];for(al=0,ap=ak.length;al<ap;al++){ak[al]!=ak[al-1]&&aq.push(ak[al])&&ah.push(P+q+(ak[al]-E)*Z)}ak=aq;ap=ak.length;var ag=an||f.set();for(al=0;al<ap;al++){var Y=ah[al]-(ah[al]-(ah[al-1]||P))/2,ao=((ah[al+1]||P+e)-ah[al])/2+(ah[al]-(ah[al-1]||P))/2,x;an?(x={}):ag.push(x=f.rect(Y-1,O,Math.max(ao+1,1),h).attr({stroke:"none",fill:"#000",opacity:0}));x.values=[];x.symbols=f.set();x.y=[];x.x=ah[al];x.axis=ak[al];for(var aj=0,am=z.length;aj<am;aj++){aq=A[aj]||A[0];for(var ai=0,y=aq.length;ai<y;ai++){if(aq[ai]==ak[al]){x.values.push(z[aj][ai]);x.y.push(O+h-q-(z[aj][ai]-C)*V);x.symbols.push(ad.symbols[aj][ai])}}}an&&an.call(x)}!an&&(v=ag)}function I(al){var ah=al||f.set(),x;for(var aj=0,an=z.length;aj<an;aj++){for(var ai=0,ak=z[aj].length;ai<ak;ai++){var ag=P+q+((A[aj]||A[0])[ai]-E)*Z,am=P+q+((A[aj]||A[0])[ai?ai-1:1]-E)*Z,y=O+h-q-(z[aj][ai]-C)*V;al?(x={}):ah.push(x=f.circle(ag,y,Math.abs(am-ag)/2).attr({stroke:"none",fill:"#000",opacity:0}));x.x=ag;x.y=y;x.value=z[aj][ai];x.line=ad.lines[aj];x.shade=ad.shades[aj];x.symbol=ad.symbols[aj][ai];x.symbols=ad.symbols[aj];x.axis=(A[aj]||A[0])[ai];al&&al.call(x)}}!al&&(p=ah)}ad.push(M,ae,aa,G,v,p);ad.lines=M;ad.shades=ae;ad.symbols=aa;ad.axis=G;ad.hoverColumn=function(j,i){!v&&K();v.mouseover(j).mouseout(i);return this};ad.clickColumn=function(i){!v&&K();v.click(i);return this};ad.hrefColumn=function(Y){var ag=f.raphael.is(arguments[0],"array")?arguments[0]:arguments;if(!(arguments.length-1)&&typeof Y=="object"){for(var j in Y){for(var y=0,X=v.length;y<X;y++){if(v[y].axis==j){v[y].attr("href",Y[j])}}}}!v&&K();for(y=0,X=ag.length;y<X;y++){v[y]&&v[y].attr("href",ag[y])}return this};ad.hover=function(j,i){!p&&I();p.mouseover(j).mouseout(i);return this};ad.click=function(i){!p&&I();p.click(i);return this};ad.each=function(i){I(i);return this};ad.eachColumn=function(i){K(i);return this};return ad}var c=function(){};c.prototype=Raphael.g;b.prototype=new c;Raphael.fn.linechart=function(f,k,g,e,j,i,h){return new b(this,f,k,g,e,j,i,h)}})();
+
+Raphael.fn.drawGrid = function (x, y, w, h, wv, hv, color) {
+    color = color || "#000";
+    var path = ["M", Math.round(x) + .5, Math.round(y) + .5, "L", Math.round(x + w) + .5, Math.round(y) + .5, Math.round(x + w) + .5, Math.round(y + h) + .5, Math.round(x) + .5, Math.round(y + h) + .5, Math.round(x) + .5, Math.round(y) + .5],
+        rowHeight = h / hv,
+        columnWidth = w / wv;
+    for (var i = 1; i < hv; i++) {
+        path = path.concat(["M", Math.round(x) + .5, Math.round(y + i * rowHeight) + .5, "H", Math.round(x + w) + .5]);
+    }
+    for (i = 1; i < wv; i++) {
+        path = path.concat(["M", Math.round(x + i * columnWidth) + .5, Math.round(y) + .5, "V", Math.round(y + h) + .5]);
+    }
+    return this.path(path.join(",")).attr({stroke: color});
+};
