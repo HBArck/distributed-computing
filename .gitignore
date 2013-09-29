@@ -6,4 +6,6 @@
 *.obj
 *.xml
 node_modulesw
+node_modules
 node_modulesw/*
+node_modules/*

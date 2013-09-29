@@ -10,10 +10,10 @@ global.confComp.getTaskTemplate = function()
         +"{"
             +"if ({ind} % i == 0 )"
             +"{"
-                +"return false;"
+                +"return 0;"
             +"}"
         +"}"
-        +"return true;"
+        +"return 1;"
     +"}";
 }
 
