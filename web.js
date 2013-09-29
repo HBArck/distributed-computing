@@ -45,13 +45,14 @@ app.get('/gettask', function(request, res) {
 });
 app.get('/stress', function(request, res) {
     var i;
-    for (i=3;i<3000;i+=2) {
+    for (i=3;i<200;i+=2) {
 
         var result = new ResultModel({
             ind: i,
-            time: Math.round(i + Math.random(i*2) + Math.random(3)),
+            time: Math.round(i + Math.random()*5*i + Math.random()*3),
             nodCount: 1,
-            result: ((Math.random(1) >= 0.5)),
+//            result: ((Math.random(1) >= 0.5) ? 1 : 0),
+            result: isPrime(i),
             _task: 0
         });
         console.log(i);
@@ -62,15 +63,16 @@ app.get('/stress', function(request, res) {
 });
 app.get('/getchartdata', function(request, res) {
     ResultModel.find({_task: 0}, 'ind time result')
-        .limit(1500)
-        .sort('-ind')
+//        .sort('ind')
+        .limit(100)
         .exec(function(err, results){
             if (!err) {
+                results.sort(function(a,b) { return parseFloat(a.ind) - parseFloat(b.ind) } );
                 var arrays = {ind: [], time: [], result: []};
                 results.forEach(function(item, i, arr){
-                    arrays.ind.push(results[i].ind);
-                    arrays.time.push(results[i].time);
-                    arrays.result.push(results[i].result);
+                    arrays.ind.push(+results[i].ind);
+                    arrays.time.push(+results[i].time);
+                    arrays.result.push(+results[i].result);
                 });
                 res.end(JSON.stringify(arrays, undefined, 2));
             } else {
@@ -94,6 +96,38 @@ app.get('/setresult', function(request, res) {
     nodesCount--;
 });
 
+isPrime = function(n) {
+    if (isNaN(n) || !isFinite(n) || n%1 || n<2) return 0;
+    if (n==leastFactor(n)) return 1;
+    return 0;
+}
+
+// leastFactor(n)
+// returns the smallest prime that divides n
+//     NaN if n is NaN or Infinity
+//      0  if n=0
+//      1  if n=1, n=-1, or n is not an integer
+
+leastFactor = function(n){
+    if (isNaN(n) || !isFinite(n)) return NaN;
+    if (n==0) return 0;
+    if (n%1 || n*n<2) return 1;
+    if (n%2==0) return 2;
+    if (n%3==0) return 3;
+    if (n%5==0) return 5;
+    var m = Math.sqrt(n);
+    for (var i=7;i<=m;i+=30) {
+        if (n%i==0)      return i;
+        if (n%(i+4)==0)  return i+4;
+        if (n%(i+6)==0)  return i+6;
+        if (n%(i+10)==0) return i+10;
+        if (n%(i+12)==0) return i+12;
+        if (n%(i+16)==0) return i+16;
+        if (n%(i+22)==0) return i+22;
+        if (n%(i+24)==0) return i+24;
+    }
+    return n;
+}
 
 
 
