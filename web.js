@@ -44,28 +44,42 @@ app.get('/gettask', function(request, res) {
     }
 });
 app.get('/stress', function(request, res) {
-    generateInd()
-//    var textResponse;
-//
-//    nodesCount++;
-//    if (global.confComp.task) {
-//        global.confComp.task.ind = ind;
-//        ind+= 2;
-//        res.end(JSON.stringify(global.confComp.task, undefined, 2));
-//    } else {
-//        TaskModel.find({_id: 0}).exec(function(err, result) {
-//            if (!err) {
-//                global.confComp.task = result[0];
-//                global.confComp.task.ind = ind;
-//                ind+= 2;
-//                res.end(JSON.stringify(global.confComp.task, undefined, 2));
-//            } else {
-//                textResponse = 'Error in first query. ' + err;
-//            }
-//            res.end(textResponse);
-//        });
-//    }
+    var i;
+    for (i=3;i<3000;i+=2) {
+
+        var result = new ResultModel({
+            ind: i,
+            time: Math.round(i + Math.random(i*2) + Math.random(3)),
+            nodCount: 1,
+            result: ((Math.random(1) >= 0.5)),
+            _task: 0
+        });
+        console.log(i);
+        result.save(function (err) {
+            if (err) console.log ('Error on save!')
+        });
+    }
 });
+app.get('/getchartdata', function(request, res) {
+    ResultModel.find({_task: 0}, 'ind time result')
+        .limit(1500)
+        .sort('-ind')
+        .exec(function(err, results){
+            if (!err) {
+                var arrays = {ind: [], time: [], result: []};
+                results.forEach(function(item, i, arr){
+                    arrays.ind.push(results[i].ind);
+                    arrays.time.push(results[i].time);
+                    arrays.result.push(results[i].result);
+                });
+                res.end(JSON.stringify(arrays, undefined, 2));
+            } else {
+                res.end('Error in first query. ' + err);
+            }
+
+    });
+});
+
 app.get('/setresult', function(request, res) {
     var result = new ResultModel({
         ind: request.query.ind,
@@ -79,23 +93,6 @@ app.get('/setresult', function(request, res) {
     });
     nodesCount--;
 });
-function generateInd()
-{        var i;
-    for (i=3;i<1000;i+=2) {
-
-        var result = new ResultModel({
-            ind: i,
-            time: i + Math.random(i*2) + Math.random(3),
-            nodCount: 1,
-            result: !!Math.random(1),
-            _task: 0
-        });
-        console.log(i);
-        result.save(function (err) {
-            if (err) console.log ('Error on save!')
-        });
-    }
-}
 
 
 
