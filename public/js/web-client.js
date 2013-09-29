@@ -188,7 +188,8 @@ $(function() {
             }
         })
             .done(function( data ) {
-                $('#res_next_prime').html(getTemplate(data).result==true ? "Next Number is Prime" : "Next Number isn't Prime" );
+                rees = getTemplate(data);
+                $('#res_next_prime').html(rees.result==true ? "Next Number["+ rees.ind+"] is Prime" : "Next Number"+rees.ind+" isn't Prime" );
             });
     });
 });
