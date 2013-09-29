@@ -29,7 +29,7 @@ $(document).ready(function(){
     };
 
 
-    $("body> .destribut-message").click(function(){
+   // $("body> .destribut-message").click(function(){
 
         $.ajax({
             url: env_ip['local'],
@@ -57,6 +57,6 @@ $(document).ready(function(){
                 })
 
             });
-    });
+    //});
 
 });
